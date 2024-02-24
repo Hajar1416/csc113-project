@@ -13,7 +13,7 @@ super(name,id,age);
 Grade=grade;
 }
 
-public  String genrateemail(){
+public  String genrateEmail(){
 
 return ID+"@student.edu.sa";
 }
