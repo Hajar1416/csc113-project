@@ -13,10 +13,11 @@ super(name,id,age);
 Grade=grade;
 }
 
-public  String genrateEmail(){
-
-return ID+"@student.edu.sa";
+public  String generateEmail(){
+String un=UniName.replace(' ','.');
+return ID+"@student."+un+"edu.sa";
 }
+
 
 public String countGrade(){
 if(Grade>=95)
