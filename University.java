@@ -15,7 +15,7 @@ Age=age;
 }
 
 
-public abstract String genrateemail();
+public abstract String genrateEmail();
 
 
 public void display(){
