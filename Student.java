@@ -14,9 +14,19 @@ Grade=grade;
 }
 
 public  String generateEmail(){
-String un=UniName.replace(' ','.');
-return ID+"@student."+un+"edu.sa";
+int loc1 = UniName.indexOf(' ') ;
+String ch1 = UniName.substring(0,1) ;
+
+String ch2 = UniName.substring(loc1 + 1,loc1 + 2) ;
+int loc2 = UniName.indexOf(' ' , loc1 + 1) ;
+
+String ch3 = UniName.substring(loc2 + 1,loc2 + 2) ;
+
+String full = ch1+ch2+ch3 ;
+
+return   ID+"@student"+full+".edu.sa";
 }
+
 
 
 public String countGrade(){
