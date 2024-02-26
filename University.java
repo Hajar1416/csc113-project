@@ -20,7 +20,8 @@ public abstract String generateEmail();
 
 public void display(){
 
-System.out.println("name: "+Name+"id: "+ID+"age: "+Age );
+System.out.println(" the name of the university: "+UniName+"\n name: "+Name+ "\n id: "+ID+"\n age: "+Age );
+
 
 }
 
