@@ -61,7 +61,9 @@ System.out.println("grade: "+countGrade());
 }
 
 
-
+public String getID(){
+  return ID;
+}
 
 
 
