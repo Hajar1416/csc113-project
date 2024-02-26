@@ -10,7 +10,7 @@ studentList = new Student[size] ;
 
 }
 
-public boolean addSudent(Student student) {
+public boolean addStudent(Student student) {
 if( numOfStudent < studentList.length)
 {
 studentList[numOfStudent] = student ;
