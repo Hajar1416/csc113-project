@@ -7,9 +7,9 @@ private double Grade;
 
 
 
-public Student(String name,String id,int age,double grade){
+public Student( String Uniname, String name,String id,int age,double grade){
 
-super(name,id,age);
+super(Uniname,name,id,age);
 Grade=grade;
 }
 
