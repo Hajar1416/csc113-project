@@ -10,7 +10,7 @@ studentList = new Student[size] ;
 
 }
 
-public boolean addSudent(Student student) {
+public boolean addStudent(Student student) {
 if( numOfStudent < studentList.length)
 {
 studentList[numOfStudent] = student ;
@@ -43,4 +43,14 @@ return studentList[i] ;
 
 return null ;
 }
+
+  public void display(){
+
+for(int i=0 ; i<numOfStudent ; i++)
+studentList[i].display();
+
 }
+
+}
+
+
