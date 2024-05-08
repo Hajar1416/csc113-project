@@ -13,7 +13,7 @@ public class SearchStudentFrame extends JFrame {
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         getContentPane().setBackground(new Color(0x456789));
         
-        ImageIcon image=new ImageIcon("logo.png");
+        ImageIcon image=new ImageIcon("logo2.png");
         setIconImage(image.getImage());
         
 
