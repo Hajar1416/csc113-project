@@ -30,11 +30,10 @@ return Name+"@"+full+".edu.sa";
 
 
 
-public void display(){
-super.display();
-System.out.println("\n Hour : " + Hour) ;
+public String toString(){
+super.toString();
+return "\n Hour : " + Hour ;
 }
 
 
 }
-
