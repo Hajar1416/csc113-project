@@ -16,7 +16,7 @@ public class AddStudentFrame extends JFrame {
         setSize(211, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        ImageIcon image=new ImageIcon("logo.png");
+        ImageIcon image=new ImageIcon("logo2.png");
         setIconImage(image.getImage());
         
         getContentPane().setBackground(new Color(0x3456789));
