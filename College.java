@@ -1,14 +1,19 @@
+
 import java.io.* ;
 import javax.swing.JOptionPane ;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class College implements Serializable{
 private String CollegeName ;
 private Student[] studentList ;
 private int numOfStudent ;
 
+
 public College(String collegeName , int size) {
 CollegeName = collegeName ;
-numOfStudent = 0 ;
 studentList = new Student[size] ;
 
 }
@@ -54,7 +59,11 @@ str = str + studentList[i].toString() + "\n" ; }
 return str;
 }
 
-public void save(String fileName){
+
+
+
+public void save(String fileName) // to save object in object file
+{
 try {
 File save = new File(fileName);
 if(save.exists()) {
@@ -83,8 +92,50 @@ JOptionPane.showMessageDialog(null, "error! in my project" + ex.toString());
 
 }
 
-/*public void load(String fileName) {
+public void load(String fileName) // to read objects from object file and print them in text file
+{
+
+    try {
+        File load = new File(fileName);
+        FileInputStream fileInput = new FileInputStream(load);
+        ObjectInputStream objectInput = new ObjectInputStream(fileInput);
+
+        int size = objectInput.readInt();
+        String name = (String) objectInput.readObject();
+
+        CollegeName = name;
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Report.txt"));
+        
+        for (int i = 0; i < size; i++) {
+            try {
+                Student obj = (Student) objectInput.readObject();
+
+                writer.write(obj.toString());
+                writer.newLine();
+            } catch (InvalidClassException ex) {
+ JOptionPane.showMessageDialog(null, "Error: Invalid class encountered while reading the object. Please make sure the class structure is compatible.");
+             }
+        }
+        
+        objectInput.close();
+        writer.close();
+
+        JOptionPane.showMessageDialog(null, "All information has been uploaded.");
+    } catch (ClassNotFoundException ex) {
+        JOptionPane.showMessageDialog(null, "Error: Class not found while reading the object.");
+    } catch (IOException ex) {
+        JOptionPane.showMessageDialog(null, "An error occurred while loading the file: " + ex.toString());
+    }
+}
+
+
+
+
+/*
+public void load(String fileName) {
 try {
+
 File load = new File(fileName);
 FileInputStream fileInput = new FileInputStream(load);
 ObjectInputStream objectInput = new ObjectInputStream(fileInput);
@@ -93,15 +144,16 @@ int size = objectInput.readInt() ;
 String name = (String) objectInput.readObject() ;
 
 CollegeName = name ;
+
 for(int i = 0 ; i < size ; i++) {
 Student obj = (Student)objectInput.readObject() ;
 this.addStudent(obj) ;
-
 }
 
 objectInput.close() ;
 JOptionPane.showMessageDialog(null, "all information has been uploaded");
 }
+
 catch(ClassNotFoundException ex) {
 JOptionPane.showMessageDialog(null, "error while reading object" ) ;
 }
@@ -110,6 +162,9 @@ JOptionPane.showMessageDialog(null, "error error while load file" + ex.toString(
 }
 
 }
+
 */
+
+
 }
 
