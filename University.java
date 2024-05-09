@@ -1,4 +1,6 @@
-public abstract class  University
+import java.io.*;
+
+public abstract class  University implements  Serializable
 {
 protected String UniName;
 protected String Name;
@@ -13,6 +15,7 @@ Name=name;
 ID=id;
 Age=age;
 }
+
 
 public University(String name,String id,int age){
 UniName="Han university";
@@ -32,6 +35,10 @@ return "\n name: "+Name+ "\n id: "+ID+"\n age: "+Age ;
  
 
 }
+public String getUniName() {
+        return UniName;
+    }
+
 }
 
 
