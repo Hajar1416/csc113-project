@@ -60,26 +60,30 @@ public class AddStudentFrame extends JFrame {
                 // Add the student to the college
                 college.addStudent(student);
 
-                // Clear the input fields
-                nameField.setText("");
-                idField.setText("");
-                ageField.setText("");
-                gradeField.setText("");
-
-                // Display a message or perform any other desired action
-                JOptionPane.showMessageDialog(null, "Student added to the college.");
+                            // Display a message or perform any other desired action
+                JOptionPane.showMessageDialog(null, "Student added to Computer Science college.");
             }
         });
         add(addButton);
         
-        JButton saveButton = new JButton("Save Student Info");
+        JButton saveButton = new JButton("Save Student Information");
 saveButton.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        college.save("Report.txt"); // Call the save method in the College class
+        college.save("File.txt"); // Call the save method in the College class
+        college.load("File.txt");
+                    
+// Clear the input fields
+                nameField.setText("");
+                idField.setText("");
+                ageField.setText("");
+                gradeField.setText("");
+              
+
     }
 });
 add(saveButton);
+
 
         JButton searchButton = new JButton("Search for Student");
         searchButton.addActionListener(new ActionListener() {
