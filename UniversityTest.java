@@ -42,10 +42,36 @@ System.out.println("Enter the name of the university: ");
 String Uniname=read.next();
 System.out.println("Enter the student name: ");
 String name=read.next();
+
+String id="";
+boolean role = true;
+while(role){
+try{
 System.out.println("Enter the student id: ");
-String id=read.next();
+ id=read.next();
+if( id.length() != 10 )
+throw new InvalidIdException();
+role = false;
+}catch( InvalidIdException ext ){
+ System.out.println(ext.toString() );
+ return;
+}
+}
+
+boolean choise =true;
+int age=0;
+while(choise){
+try{
 System.out.println("Enter the student age: ");
-int age=read.nextInt();
+ age=read.nextInt();
+ choise=false;
+}catch( RuntimeException ex ){
+String str=read.next();
+System.out.println(" rong input you should inter an intger number ");
+}
+}
+
+
 System.out.println("Enter the student Grade: ");
 double Grade=read.nextDouble();
 
@@ -59,10 +85,39 @@ System.out.println("Enter the name of the university: ");
 String Uniname=read.next();
 System.out.println("Enter the student name: ");
 String name=read.next();
+
+
+String id="";
+boolean role = true;
+while(role){
+try{
 System.out.println("Enter the student id: ");
-String id=read.next();
+ id=read.next();
+if( id.length() != 10 )
+throw new InvalidIdException();
+role = false;
+}catch( InvalidIdException ext ){
+ System.out.println(ext.toString() );
+ return;
+}
+}
+
+
+boolean choise =true;
+int age=0;
+while(choise){
+try{
 System.out.println("Enter the student age: ");
-int age=read.nextInt();
+ age=read.nextInt();
+ choise=false;
+}catch( RuntimeException ex ){
+String str=read.next();
+System.out.println(" rong input you should inter an intger number ");
+}
+}
+
+
+
 System.out.println("Enter the student Grade: ");
 double Grade=read.nextDouble();
 
@@ -77,10 +132,38 @@ System.out.println("Enter the name of the university: ");
 String Uniname=read.next();
 System.out.println("Enter the student name: ");
 String name=read.next();
+
+
+String id="";
+boolean role = true;
+while(role){
+try{
 System.out.println("Enter the student id: ");
-String id=read.next();
+ id=read.next();
+ System.out.println();
+if( id.length() != 10 )
+throw new InvalidIdException();
+role = false;
+}catch( InvalidIdException ext ){
+ String str=read.next();
+ System.out.println(ext.toString() );
+ 
+}
+}
+
+boolean choise =true;
+int age=0;
+while(choise){
+try{
 System.out.println("Enter the student age: ");
-int age=read.nextInt();
+ age=read.nextInt();
+ choise=false;
+}catch( RuntimeException ex ){
+String str=read.next();
+System.out.println(" rong input you should inter an intger number ");
+}
+}
+
 System.out.println("Enter the student Grade: ");
 double Grade=read.nextDouble();
 
@@ -186,15 +269,15 @@ choice=read.nextInt();
 
 if(choice==1){
 
-sciences.display();
+sciences.toString();
 }
 
 else if(choice==2){
 
-computer.display();
+computer.toString();
 }
 else{
-medicine.display();
+medicine.toString();
 
 
 }
@@ -215,5 +298,6 @@ break;
 
 }
 }
+
 } 
 Footer
