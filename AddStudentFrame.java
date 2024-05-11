@@ -29,16 +29,54 @@ public class AddStudentFrame extends JFrame {
         add(nameLabel);
         nameField = new JTextField(20);
         add(nameField);
-
+        
+        String idtext=idField.getText();       
+        
+        
         JLabel idLabel = new JLabel("Student ID:");
         add(idLabel);
         idField = new JTextField(20);
         add(idField);
+        
+        try{
+        if( idtext.length() != 10 )
+        throw new InvalidIdException();
+         int id=Integer.parseInt(idtext);
+
+        }catch( NumberFormatException ex ){
+         JOptionPane.showMessageDialog(this, "invalid id, try again");
+         return;
+         }
+
+        catch( InvalidIdException ext ){
+        JOptionPane.showMessageDialog(this, ext.getMessage() );
+        return;}
+        
+
+        String agetext=ageField.getText();    
+
 
         JLabel ageLabel = new JLabel("Student Age:");
         add(ageLabel);
         ageField = new JTextField(20);
         add(ageField);
+        
+        try{
+       int age=Integer.parseInt(agetext);
+        if(age<=0)
+        throw new InvalidAgeException();
+        }catch( NumberFormatException ex ){
+         JOptionPane.showMessageDialog(this, "invalid age, try again");
+         return;
+         }
+         catch(InvalidAgeException ext ){
+          JOptionPane.showMessageDialog(this, ext.getMessage() );
+          return;
+          }
+
+      
+        
+        
 
         JLabel gradeLabel = new JLabel("Student Total Grade:");
         add(gradeLabel);
