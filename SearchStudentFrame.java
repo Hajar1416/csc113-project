@@ -1,3 +1,6 @@
+
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,23 +9,25 @@ import java.awt.event.ActionListener;
 public class SearchStudentFrame extends JFrame {
 
     private JTextField idField;
+    private JTextArea resultTextArea;
 
     public SearchStudentFrame(College college) {
         setTitle("Search Student");
-        setSize(300, 200);
+        setSize(400, 300);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        getContentPane().setBackground(new Color(0x456789));
-        
-        ImageIcon image=new ImageIcon("logo2.png");
-        setIconImage(image.getImage());
-        
 
-        setLayout(new FlowLayout());
+        ImageIcon image = new ImageIcon("logo2.png");
+        setIconImage(image.getImage());
+
+        setLayout(new BorderLayout());
+
+        JPanel searchPanel = new JPanel();
+        searchPanel.setLayout(new FlowLayout());
 
         JLabel idLabel = new JLabel("Student ID:");
-        add(idLabel);
+        searchPanel.add(idLabel);
         idField = new JTextField(20);
-        add(idField);
+        searchPanel.add(idField);
 
         JButton searchButton = new JButton("Search");
         searchButton.addActionListener(new ActionListener() {
@@ -32,17 +37,23 @@ public class SearchStudentFrame extends JFrame {
 
                 // Perform the search using the college object
                 Student searchResult = college.searchForStudent(studentId);
-                               
+
                 idField.setText("");
 
-
                 if (searchResult == null) {
-                    JOptionPane.showMessageDialog(null, "No student found with the given ID.");
+                    resultTextArea.setText("No student found with the given ID.");
                 } else {
-                    JOptionPane.showMessageDialog(null, searchResult.toString());
+                    resultTextArea.setText(searchResult.toString());
                 }
             }
         });
-        add(searchButton);
+        searchPanel.add(searchButton);
+
+        add(searchPanel, BorderLayout.NORTH);
+
+        resultTextArea = new JTextArea();
+        resultTextArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(resultTextArea);
+        add(scrollPane, BorderLayout.CENTER);
     }
 }
