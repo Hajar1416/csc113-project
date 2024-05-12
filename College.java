@@ -1,4 +1,3 @@
-
 import java.io.* ;
 import javax.swing.JOptionPane ;
 import java.io.BufferedWriter;
@@ -131,39 +130,6 @@ public void load(String fileName) // to read objects from object file and print 
 
 
 
-
-/*
-public void load(String fileName) {
-try {
-
-File load = new File(fileName);
-FileInputStream fileInput = new FileInputStream(load);
-ObjectInputStream objectInput = new ObjectInputStream(fileInput);
-
-int size = objectInput.readInt() ;
-String name = (String) objectInput.readObject() ;
-
-CollegeName = name ;
-
-for(int i = 0 ; i < size ; i++) {
-Student obj = (Student)objectInput.readObject() ;
-this.addStudent(obj) ;
-}
-
-objectInput.close() ;
-JOptionPane.showMessageDialog(null, "all information has been uploaded");
-}
-
-catch(ClassNotFoundException ex) {
-JOptionPane.showMessageDialog(null, "error while reading object" ) ;
-}
-catch(IOException ex){
-JOptionPane.showMessageDialog(null, "error error while load file" + ex.toString());
-}
-
-}
-
-*/
 
 
 }
